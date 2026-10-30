@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einstellungen – Limit erreicht – mattermost2</title>
+<meta name="screen-route" content="/:team/channels/:channel">
+<meta name="screen-state" content="limit of 20 templates reached, new template refused">
+<link rel="stylesheet" href="styles.css">
+<script src="mockup.js" defer></script>
+</head>
+<body>
+<!-- serves: AC-04 -->
+<div class="app" aria-hidden="true" inert data-od-id="app-shell">
+  <nav class="team-bar" aria-label="Teams"><div class="team-tile" title="Support-Team">ST</div></nav>
+  <aside class="sidebar" data-od-id="channel-sidebar">
+    <div class="sidebar__head">
+      <h2 class="sidebar__title">Support-Team</h2>
+      <a class="btn-icon" href="settings-reply-templates.html" aria-label="Einstellungen öffnen" data-od-id="open-settings-sidebar"
+        ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+          ><circle cx="12" cy="12" r="3"
+          /><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"
+        /></svg
+      ></a>
+    </div>
+    <div class="sidebar__body">
+      <span class="side-label">Kanäle</span>
+      <ul class="side-list">
+        <li class="side-item is-active"><span class="side-item__icon">#</span>kundenanfragen</li>
+        <li class="side-item"><span class="side-item__icon">#</span>allgemein</li>
+        <li class="side-item"><span class="side-item__icon">#</span>release-planung</li>
+        <li class="side-item"><span class="side-item__icon">#</span>wartungsfenster</li>
+      </ul>
+      <span class="side-label">Direktnachrichten</span>
+      <ul class="side-list">
+        <li class="side-item"><span class="avatar avatar--sm avatar--2">MV</span>Mara Vogel</li>
+        <li class="side-item"><span class="avatar avatar--sm avatar--3">TK</span>Tobias Keller</li>
+      </ul>
+    </div>
+    <div class="sidebar__foot"><span class="avatar avatar--sm">JW</span>Jonas Weber</div>
+  </aside>
+  <main class="channel" data-od-id="channel">
+    <header class="channel__header" data-od-id="channel-header">
+      <div>
+        <h1 class="channel__name"><span class="hash">#</span>kundenanfragen</h1>
+        <p class="channel__meta">12 Mitglieder · Eingehende Kundenanfragen und Übergaben</p>
+      </div>
+      <a class="btn-icon only-narrow" href="settings-reply-templates.html" aria-label="Einstellungen öffnen" data-od-id="open-settings-header"
+        ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+          ><circle cx="12" cy="12" r="3"
+          /><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"
+        /></svg
+      ></a>
+    </header>
+    <div class="channel__fill"></div>
+    
+  </main>
+</div>
+<div class="modal-backdrop" data-od-id="settings-backdrop">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settings-title" data-od-id="settings-modal">
+    <header class="modal__header">
+      <h1 id="settings-title">Einstellungen</h1>
+      <a class="btn-icon" href="channel-view.html" aria-label="Einstellungen schließen" data-od-id="close-settings"
+        ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+          ><path d="M6 6l12 12M18 6L6 18"
+        /></svg
+      ></a>
+    </header>
+    <div class="modal__body">
+      <nav class="settings-nav" aria-label="Einstellungsbereiche" data-od-id="settings-sidebar">
+        <!-- existing tabs stay as they are; only "Antwortvorlagen" is new -->
+        <ul class="settings-nav__list" role="tablist">
+            <li role="presentation"><button class="settings-nav__item" type="button" role="tab" aria-selected="false">Benachrichtigungen</button></li>
+            <li role="presentation"><button class="settings-nav__item" type="button" role="tab" aria-selected="false">Anzeige</button></li>
+            <li role="presentation"><button class="settings-nav__item" type="button" role="tab" aria-selected="false">Seitenleiste</button></li>
+            <li role="presentation"><button class="settings-nav__item" type="button" role="tab" aria-selected="false">Erweitert</button></li>
+            <li role="presentation"
+              ><a class="settings-nav__item" role="tab" aria-selected="true" href="settings-reply-templates.html" data-od-id="settings-tab-reply-templates">Antwortvorlagen</a
+            ></li>
+        </ul>
+      </nav>
+      <section class="settings-panel" role="tabpanel" aria-labelledby="rt-heading" data-od-id="reply-templates-section">
+        <div class="panel-head">
+          <div>
+            <h2 id="rt-heading">Antwortvorlagen</h2>
+            <p>Eigene Textbausteine für Nachrichten. Sie werden mit deinem Konto gespeichert und sind auf allen Geräten gleich.</p>
+          </div>
+          <a class="btn btn--primary" href="settings-reply-templates-create.html" data-od-id="new-template"
+            ><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+              ><path d="M12 5v14M5 12h14"
+            /></svg>Neue Vorlage</a>
+        </div>
+        <div class="panel-meta"><span><span class="mono" data-template-count>20</span> von <span class="mono">20</span> Vorlagen</span><span class="badge badge--error">Limit erreicht</span></div>
+        <div class="panel-stack">
+          <div class="alert alert--error" role="alert" data-od-id="limit-message"
+            ><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+              ><circle cx="12" cy="12" r="9"
+              /><path d="M12 7v6M12 16.5v.5"
+            /></svg
+            ><span>Du hast bereits 20 Antwortvorlagen. Lösche eine Vorlage, bevor du eine neue erstellst.</span
+          ></div>
+          <ul class="template-list" data-od-id="template-list">
+          <li class="template" data-od-id="template-1">
+            <div class="template__main">
+              <h3 class="template__title">Eingangsbestätigung</h3>
+              <p class="template__text">Vielen Dank für Ihre Nachricht! Wir haben Ihr Anliegen aufgenommen und melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+              <p class="template__meta">Erstellt am <span class="mono">12.01.2026</span> · <span class="mono">117</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-1">Bearbeiten<span class="sr-only">: Eingangsbestätigung</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-1">Löschen<span class="sr-only">: Eingangsbestätigung</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-2">
+            <div class="template__main">
+              <h3 class="template__title">Rückfrage Ticketnummer</h3>
+              <p class="template__text">Könnten Sie mir bitte die Ticketnummer nennen? Dann kann ich Ihr Anliegen schneller zuordnen.</p>
+              <p class="template__meta">Erstellt am <span class="mono">21.01.2026</span> · <span class="mono">93</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-2">Bearbeiten<span class="sr-only">: Rückfrage Ticketnummer</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-2">Löschen<span class="sr-only">: Rückfrage Ticketnummer</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-3">
+            <div class="template__main">
+              <h3 class="template__title">Bitte um Screenshot</h3>
+              <p class="template__text">Damit wir das Problem nachvollziehen können, schicken Sie uns bitte einen Screenshot der Fehlermeldung und nennen Sie Browser und Version.</p>
+              <p class="template__meta">Erstellt am <span class="mono">30.01.2026</span> · <span class="mono">138</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-3">Bearbeiten<span class="sr-only">: Bitte um Screenshot</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-3">Löschen<span class="sr-only">: Bitte um Screenshot</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-4">
+            <div class="template__main">
+              <h3 class="template__title">Wartungsfenster angekündigt</h3>
+              <p class="template__text">Am Samstag zwischen 22:00 und 24:00 Uhr führen wir geplante Wartungsarbeiten durch. In dieser Zeit kann es zu kurzen Unterbrechungen kommen.</p>
+              <p class="template__meta">Erstellt am <span class="mono">08.02.2026</span> · <span class="mono">140</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-4">Bearbeiten<span class="sr-only">: Wartungsfenster angekündigt</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-4">Löschen<span class="sr-only">: Wartungsfenster angekündigt</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-5">
+            <div class="template__main">
+              <h3 class="template__title">Übergabe an Kollegen</h3>
+              <p class="template__text">Ich übergebe Ihr Anliegen an meinen Kollegen aus dem technischen Support. Er meldet sich heute noch bei Ihnen.</p>
+              <p class="template__meta">Erstellt am <span class="mono">17.02.2026</span> · <span class="mono">110</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-5">Bearbeiten<span class="sr-only">: Übergabe an Kollegen</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-5">Löschen<span class="sr-only">: Übergabe an Kollegen</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-6">
+            <div class="template__main">
+              <h3 class="template__title">Lösung bestätigt</h3>
+              <p class="template__text">Wir haben die Ursache gefunden und behoben. Bitte prüfen Sie, ob der Export bei Ihnen wieder wie erwartet funktioniert.</p>
+              <p class="template__meta">Erstellt am <span class="mono">26.02.2026</span> · <span class="mono">119</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-6">Bearbeiten<span class="sr-only">: Lösung bestätigt</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-6">Löschen<span class="sr-only">: Lösung bestätigt</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-7">
+            <div class="template__main">
+              <h3 class="template__title">Danke für die Geduld</h3>
+              <p class="template__text">Vielen Dank für Ihre Geduld. Wir arbeiten weiter an einer Lösung und halten Sie auf dem Laufenden.</p>
+              <p class="template__meta">Erstellt am <span class="mono">07.03.2026</span> · <span class="mono">98</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-7">Bearbeiten<span class="sr-only">: Danke für die Geduld</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-7">Löschen<span class="sr-only">: Danke für die Geduld</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-8">
+            <div class="template__main">
+              <h3 class="template__title">Support-Zeiten</h3>
+              <p class="template__text">Unser Support ist werktags von 8:00 bis 17:00 Uhr erreichbar. Wir melden uns am nächsten Arbeitstag.</p>
+              <p class="template__meta">Erstellt am <span class="mono">16.03.2026</span> · <span class="mono">100</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-8">Bearbeiten<span class="sr-only">: Support-Zeiten</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-8">Löschen<span class="sr-only">: Support-Zeiten</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-9">
+            <div class="template__main">
+              <h3 class="template__title">&lt;img src=x onerror=alert(1)&gt;</h3>
+              <p class="template__text">&lt;script&gt;alert(&quot;Hallo&quot;)&lt;/script&gt; Dieser Text wird nur als Text angezeigt, nie ausgeführt.</p>
+              <p class="template__meta">Erstellt am <span class="mono">25.03.2026</span> · <span class="mono">88</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-9">Bearbeiten<span class="sr-only">: &lt;img src=x onerror=alert(1)&gt;</span
+              ></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-9">Löschen<span class="sr-only">: &lt;img src=x onerror=alert(1)&gt;</span
+              ></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-10">
+            <div class="template__main">
+              <h3 class="template__title">Passwort zurücksetzen</h3>
+              <p class="template__text">Über „Passwort vergessen“ auf der Anmeldeseite können Sie sich einen Link zum Zurücksetzen per E-Mail senden lassen.</p>
+              <p class="template__meta">Erstellt am <span class="mono">03.04.2026</span> · <span class="mono">116</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-10">Bearbeiten<span class="sr-only">: Passwort zurücksetzen</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-10">Löschen<span class="sr-only">: Passwort zurücksetzen</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-11">
+            <div class="template__main">
+              <h3 class="template__title">Rechnung erneut senden</h3>
+              <p class="template__text">Ich habe Ihnen die Rechnung soeben erneut per E-Mail geschickt. Bitte prüfen Sie auch Ihren Spam-Ordner.</p>
+              <p class="template__meta">Erstellt am <span class="mono">12.04.2026</span> · <span class="mono">104</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-11">Bearbeiten<span class="sr-only">: Rechnung erneut senden</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-11">Löschen<span class="sr-only">: Rechnung erneut senden</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-12">
+            <div class="template__main">
+              <h3 class="template__title">Rückruf vereinbaren</h3>
+              <p class="template__text">Gern rufe ich Sie zurück. Nennen Sie mir bitte eine Telefonnummer und ein passendes Zeitfenster.</p>
+              <p class="template__meta">Erstellt am <span class="mono">21.04.2026</span> · <span class="mono">96</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-12">Bearbeiten<span class="sr-only">: Rückruf vereinbaren</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-12">Löschen<span class="sr-only">: Rückruf vereinbaren</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-13">
+            <div class="template__main">
+              <h3 class="template__title">Fehlerbericht angelegt</h3>
+              <p class="template__text">Wir haben zu Ihrer Meldung einen Fehlerbericht angelegt und priorisiert. Sobald es Neuigkeiten gibt, schreibe ich Ihnen.</p>
+              <p class="template__meta">Erstellt am <span class="mono">30.04.2026</span> · <span class="mono">120</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-13">Bearbeiten<span class="sr-only">: Fehlerbericht angelegt</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-13">Löschen<span class="sr-only">: Fehlerbericht angelegt</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-14">
+            <div class="template__main">
+              <h3 class="template__title">Funktionswunsch notiert</h3>
+              <p class="template__text">Danke für die Anregung! Ich habe Ihren Wunsch an das Produktteam weitergegeben.</p>
+              <p class="template__meta">Erstellt am <span class="mono">09.05.2026</span> · <span class="mono">79</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-14">Bearbeiten<span class="sr-only">: Funktionswunsch notiert</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-14">Löschen<span class="sr-only">: Funktionswunsch notiert</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-15">
+            <div class="template__main">
+              <h3 class="template__title">Zugang eingerichtet</h3>
+              <p class="template__text">Ihr Zugang ist eingerichtet. Die Anmeldedaten haben Sie separat per E-Mail erhalten.</p>
+              <p class="template__meta">Erstellt am <span class="mono">18.05.2026</span> · <span class="mono">84</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-15">Bearbeiten<span class="sr-only">: Zugang eingerichtet</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-15">Löschen<span class="sr-only">: Zugang eingerichtet</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-16">
+            <div class="template__main">
+              <h3 class="template__title">Vertragsfrage weitergeleitet</h3>
+              <p class="template__text">Fragen zum Vertrag beantwortet Ihnen unser Vertriebsteam. Ich habe Ihre Anfrage dorthin weitergeleitet.</p>
+              <p class="template__meta">Erstellt am <span class="mono">27.05.2026</span> · <span class="mono">103</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-16">Bearbeiten<span class="sr-only">: Vertragsfrage weitergeleitet</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-16">Löschen<span class="sr-only">: Vertragsfrage weitergeleitet</span
+              ></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-17">
+            <div class="template__main">
+              <h3 class="template__title">Daten-Export gestartet</h3>
+              <p class="template__text">Der Export Ihrer Daten läuft. Sie erhalten eine Nachricht, sobald die Datei zum Download bereitsteht.</p>
+              <p class="template__meta">Erstellt am <span class="mono">05.06.2026</span> · <span class="mono">101</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-17">Bearbeiten<span class="sr-only">: Daten-Export gestartet</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-17">Löschen<span class="sr-only">: Daten-Export gestartet</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-18">
+            <div class="template__main">
+              <h3 class="template__title">Termin bestätigt</h3>
+              <p class="template__text">Ihr Termin ist bestätigt. Eine Einladung mit allen Details finden Sie in Ihrem Postfach.</p>
+              <p class="template__meta">Erstellt am <span class="mono">14.06.2026</span> · <span class="mono">88</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-18">Bearbeiten<span class="sr-only">: Termin bestätigt</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-18">Löschen<span class="sr-only">: Termin bestätigt</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-19">
+            <div class="template__main">
+              <h3 class="template__title">Status-Update folgt</h3>
+              <p class="template__text">Ich melde mich bis spätestens morgen Mittag mit einem Status-Update bei Ihnen.</p>
+              <p class="template__meta">Erstellt am <span class="mono">23.06.2026</span> · <span class="mono">78</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-19">Bearbeiten<span class="sr-only">: Status-Update folgt</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-19">Löschen<span class="sr-only">: Status-Update folgt</span></button>
+            </div>
+          </li>
+          <li class="template" data-od-id="template-20">
+            <div class="template__main">
+              <h3 class="template__title">Ticket abgeschlossen</h3>
+              <p class="template__text">Ich schließe Ihr Ticket nun ab. Falls noch etwas offen ist, antworten Sie einfach auf diese Nachricht.</p>
+              <p class="template__meta">Erstellt am <span class="mono">02.07.2026</span> · <span class="mono">102</span> Zeichen</p>
+            </div>
+            <div class="template__actions">
+              <a class="btn btn--tertiary btn--sm" href="settings-reply-templates-edit.html" data-od-id="edit-template-20">Bearbeiten<span class="sr-only">: Ticket abgeschlossen</span></a>
+              <button class="btn btn--tertiary btn--sm btn--danger" type="button" data-delete data-od-id="delete-template-20">Löschen<span class="sr-only">: Ticket abgeschlossen</span></button>
+            </div>
+          </li>
+        </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</body>
+</html>

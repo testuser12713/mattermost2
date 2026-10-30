@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kanal – Vorlagenmenü ohne Treffer – mattermost2</title>
+<meta name="screen-route" content="/:team/channels/:channel">
+<meta name="screen-state" content="reply templates menu search without hits">
+<link rel="stylesheet" href="styles.css">
+<script src="mockup.js" defer></script>
+</head>
+<body>
+<!-- serves: AC-07 -->
+<div class="app" data-od-id="app-shell">
+  <nav class="team-bar" aria-label="Teams"><div class="team-tile" title="Support-Team">ST</div></nav>
+  <aside class="sidebar" data-od-id="channel-sidebar">
+    <div class="sidebar__head">
+      <h2 class="sidebar__title">Support-Team</h2>
+      <a class="btn-icon" href="settings-reply-templates.html" aria-label="Einstellungen öffnen" data-od-id="open-settings-sidebar"
+        ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+          ><circle cx="12" cy="12" r="3"
+          /><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"
+        /></svg
+      ></a>
+    </div>
+    <div class="sidebar__body">
+      <span class="side-label">Kanäle</span>
+      <ul class="side-list">
+        <li class="side-item is-active"><span class="side-item__icon">#</span>kundenanfragen</li>
+        <li class="side-item"><span class="side-item__icon">#</span>allgemein</li>
+        <li class="side-item"><span class="side-item__icon">#</span>release-planung</li>
+        <li class="side-item"><span class="side-item__icon">#</span>wartungsfenster</li>
+      </ul>
+      <span class="side-label">Direktnachrichten</span>
+      <ul class="side-list">
+        <li class="side-item"><span class="avatar avatar--sm avatar--2">MV</span>Mara Vogel</li>
+        <li class="side-item"><span class="avatar avatar--sm avatar--3">TK</span>Tobias Keller</li>
+      </ul>
+    </div>
+    <div class="sidebar__foot"><span class="avatar avatar--sm">JW</span>Jonas Weber</div>
+  </aside>
+  <main class="channel" data-od-id="channel">
+    <header class="channel__header" data-od-id="channel-header">
+      <div>
+        <h1 class="channel__name"><span class="hash">#</span>kundenanfragen</h1>
+        <p class="channel__meta">12 Mitglieder · Eingehende Kundenanfragen und Übergaben</p>
+      </div>
+      <a class="btn-icon only-narrow" href="settings-reply-templates.html" aria-label="Einstellungen öffnen" data-od-id="open-settings-header"
+        ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+          ><circle cx="12" cy="12" r="3"
+          /><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"
+        /></svg
+      ></a>
+    </header>
+    <section class="posts" aria-label="Nachrichten" data-od-id="post-list">
+      <div class="day-sep"><span>Heute</span></div>
+      <article class="post" data-od-id="post-1"
+        ><span class="avatar avatar--2" aria-hidden="true">MV</span
+        ><div class="post__body"
+          ><header class="post__meta"
+            ><span class="post__author">Mara Vogel</span
+            ><time class="mono">09:12</time
+          ></header
+          ><p>Guten Morgen! Die Brandt GmbH meldet, dass der Export seit gestern Abend leer bleibt. Kann jemand draufschauen?</p
+        ></div
+      ></article>
+      <article class="post" data-od-id="post-2"
+        ><span class="avatar avatar--3" aria-hidden="true">TK</span
+        ><div class="post__body"
+          ><header class="post__meta"
+            ><span class="post__author">Tobias Keller</span
+            ><time class="mono">09:18</time
+          ></header
+          ><p>Ich schaue rein. Hast du die Ticketnummer?</p
+        ></div
+      ></article>
+      <article class="post" data-od-id="post-3"
+        ><span class="avatar avatar--2" aria-hidden="true">MV</span
+        ><div class="post__body"
+          ><header class="post__meta"
+            ><span class="post__author">Mara Vogel</span
+            ><time class="mono">09:19</time
+          ></header
+          ><p>SUP-4821. Der Kunde erwartet bis 11 Uhr eine Rückmeldung.</p
+        ></div
+      ></article>
+      <article class="post" data-od-id="post-4"
+        ><span class="avatar avatar--3" aria-hidden="true">TK</span
+        ><div class="post__body"
+          ><header class="post__meta"
+            ><span class="post__author">Tobias Keller</span
+            ><time class="mono">09:41</time
+          ></header
+          ><p>Ursache gefunden: Der nächtliche Job lief mit abgelaufenem Zugriffstoken. Ich habe ihn neu gestartet und die Daten sind wieder da.</p
+        ></div
+      ></article>
+    </section>
+    <div class="editor" data-od-id="message-input">
+      
+      <div class="editor__box is-focused">
+        <label class="sr-only" for="post-textbox">Nachricht an #kundenanfragen</label>
+        <textarea class="editor__textarea" id="post-textbox" rows="2" placeholder="Nachricht an #kundenanfragen schreiben"></textarea>
+        <div class="editor__bar">
+          <!-- existing formatting controls, unchanged -->
+          <button class="btn-icon" type="button" aria-label="Fett"
+            ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+              ><path d="M7 5h6a3 3 0 010 6H7zM7 11h7a3 3 0 010 6H7z"
+            /></svg
+          ></button>
+          <button class="btn-icon" type="button" aria-label="Kursiv"
+            ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+              ><path d="M10 5h6M8 19h6M14 5l-4 14"
+            /></svg
+          ></button>
+          <div class="rt-menu">
+            <a class="btn-icon" href="channel-view.html" role="button" aria-haspopup="menu" aria-expanded="true" aria-label="Antwortvorlage einfügen" title="Antwortvorlage einfügen" data-od-id="reply-templates-button"
+              ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                ><path d="M4 5h16v11H10l-5 4v-4H4z"
+                /><path d="M8 9h8M8 12h5"
+              /></svg
+            ></a>
+            <div class="menu" role="menu" aria-label="Antwortvorlagen" data-od-id="reply-templates-menu">
+          <!-- search field only with more than 5 templates -->
+          <div class="menu__search input-wrap"
+            ><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+              ><circle cx="11" cy="11" r="6"
+              /><path d="M20 20l-4.5-4.5"
+            /></svg
+            ><label class="sr-only" for="rt-search">Vorlagen nach Titel durchsuchen</label
+            ><input class="input input--search" id="rt-search" type="search" placeholder="Vorlagen durchsuchen" autocomplete="off" value="Kündigung" data-menu-search data-od-id="menu-search"
+          ></div>
+          <ul class="menu__list">
+            <li role="none" hidden
+              ><a class="menu__item" role="menuitem" href="channel-view-template-inserted.html" data-od-id="menu-item-1"
+                ><span class="menu__label">Eingangsbestätigung</span
+              ></a
+            ></li>
+            <li role="none" hidden
+              ><a class="menu__item" role="menuitem" href="channel-view-template-inserted.html" data-od-id="menu-item-2"
+                ><span class="menu__label">Rückfrage Ticketnummer</span
+              ></a
+            ></li>
+            <li role="none" hidden
+              ><a class="menu__item" role="menuitem" href="channel-view-template-inserted.html" data-od-id="menu-item-3"
+                ><span class="menu__label">Bitte um Screenshot</span
+              ></a
+            ></li>
+            <li role="none" hidden
+              ><a class="menu__item" role="menuitem" href="channel-view-template-inserted.html" data-od-id="menu-item-4"
+                ><span class="menu__label">Wartungsfenster angekündigt</span
+              ></a
+            ></li>
+            <li role="none" hidden
+              ><a class="menu__item" role="menuitem" href="channel-view-template-inserted.html" data-od-id="menu-item-5"
+                ><span class="menu__label">Übergabe an Kollegen</span
+              ></a
+            ></li>
+            <li role="none" hidden><a class="menu__item" role="menuitem" href="channel-view-template-inserted.html" data-od-id="menu-item-6"><span class="menu__label">Lösung bestätigt</span></a></li>
+            <li role="none" hidden
+              ><a class="menu__item" role="menuitem" href="channel-view-template-inserted.html" data-od-id="menu-item-7"
+                ><span class="menu__label">Danke für die Geduld</span
+              ></a
+            ></li>
+            <li role="none" hidden><a class="menu__item" role="menuitem" href="channel-view-template-inserted.html" data-od-id="menu-item-8"><span class="menu__label">Support-Zeiten</span></a></li>
+            <li role="none" hidden
+              ><a class="menu__item" role="menuitem" href="channel-view-template-inserted.html" data-od-id="menu-item-9"
+                ><span class="menu__label">&lt;img src=x onerror=alert(1)&gt;</span
+              ></a
+            ></li>
+          </ul>
+          <p class="menu__empty" data-od-id="menu-no-results">Keine Vorlagen gefunden.</p>
+        </div>
+          </div>
+          <span class="editor__spacer"></span>
+          
+          <button class="btn btn--primary btn--icon" type="button" aria-label="Nachricht senden" data-od-id="send-button"
+            ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+              ><path d="M4 12L20 4l-6 16-3-7z"
+            /></svg
+          ></button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

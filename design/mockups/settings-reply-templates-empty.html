@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einstellungen – keine Vorlagen – mattermost2</title>
+<meta name="screen-route" content="/:team/channels/:channel">
+<meta name="screen-state" content="no templates yet">
+<link rel="stylesheet" href="styles.css">
+<script src="mockup.js" defer></script>
+</head>
+<body>
+<!-- serves: AC-02, AC-08 -->
+<div class="app" aria-hidden="true" inert data-od-id="app-shell">
+  <nav class="team-bar" aria-label="Teams"><div class="team-tile" title="Support-Team">ST</div></nav>
+  <aside class="sidebar" data-od-id="channel-sidebar">
+    <div class="sidebar__head">
+      <h2 class="sidebar__title">Support-Team</h2>
+      <a class="btn-icon" href="settings-reply-templates.html" aria-label="Einstellungen öffnen" data-od-id="open-settings-sidebar"
+        ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+          ><circle cx="12" cy="12" r="3"
+          /><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"
+        /></svg
+      ></a>
+    </div>
+    <div class="sidebar__body">
+      <span class="side-label">Kanäle</span>
+      <ul class="side-list">
+        <li class="side-item is-active"><span class="side-item__icon">#</span>kundenanfragen</li>
+        <li class="side-item"><span class="side-item__icon">#</span>allgemein</li>
+        <li class="side-item"><span class="side-item__icon">#</span>release-planung</li>
+        <li class="side-item"><span class="side-item__icon">#</span>wartungsfenster</li>
+      </ul>
+      <span class="side-label">Direktnachrichten</span>
+      <ul class="side-list">
+        <li class="side-item"><span class="avatar avatar--sm avatar--2">MV</span>Mara Vogel</li>
+        <li class="side-item"><span class="avatar avatar--sm avatar--3">TK</span>Tobias Keller</li>
+      </ul>
+    </div>
+    <div class="sidebar__foot"><span class="avatar avatar--sm">JW</span>Jonas Weber</div>
+  </aside>
+  <main class="channel" data-od-id="channel">
+    <header class="channel__header" data-od-id="channel-header">
+      <div>
+        <h1 class="channel__name"><span class="hash">#</span>kundenanfragen</h1>
+        <p class="channel__meta">12 Mitglieder · Eingehende Kundenanfragen und Übergaben</p>
+      </div>
+      <a class="btn-icon only-narrow" href="settings-reply-templates.html" aria-label="Einstellungen öffnen" data-od-id="open-settings-header"
+        ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+          ><circle cx="12" cy="12" r="3"
+          /><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"
+        /></svg
+      ></a>
+    </header>
+    <div class="channel__fill"></div>
+    
+  </main>
+</div>
+<div class="modal-backdrop" data-od-id="settings-backdrop">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settings-title" data-od-id="settings-modal">
+    <header class="modal__header">
+      <h1 id="settings-title">Einstellungen</h1>
+      <a class="btn-icon" href="channel-view.html" aria-label="Einstellungen schließen" data-od-id="close-settings"
+        ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+          ><path d="M6 6l12 12M18 6L6 18"
+        /></svg
+      ></a>
+    </header>
+    <div class="modal__body">
+      <nav class="settings-nav" aria-label="Einstellungsbereiche" data-od-id="settings-sidebar">
+        <!-- existing tabs stay as they are; only "Antwortvorlagen" is new -->
+        <ul class="settings-nav__list" role="tablist">
+            <li role="presentation"><button class="settings-nav__item" type="button" role="tab" aria-selected="false">Benachrichtigungen</button></li>
+            <li role="presentation"><button class="settings-nav__item" type="button" role="tab" aria-selected="false">Anzeige</button></li>
+            <li role="presentation"><button class="settings-nav__item" type="button" role="tab" aria-selected="false">Seitenleiste</button></li>
+            <li role="presentation"><button class="settings-nav__item" type="button" role="tab" aria-selected="false">Erweitert</button></li>
+            <li role="presentation"
+              ><a class="settings-nav__item" role="tab" aria-selected="true" href="settings-reply-templates.html" data-od-id="settings-tab-reply-templates">Antwortvorlagen</a
+            ></li>
+        </ul>
+      </nav>
+      <section class="settings-panel" role="tabpanel" aria-labelledby="rt-heading" data-od-id="reply-templates-section">
+        <div class="panel-head">
+          <div>
+            <h2 id="rt-heading">Antwortvorlagen</h2>
+            <p>Eigene Textbausteine für Nachrichten. Sie werden mit deinem Konto gespeichert und sind auf allen Geräten gleich.</p>
+          </div>
+          <a class="btn btn--primary" href="settings-reply-templates-create.html" data-od-id="new-template"
+            ><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+              ><path d="M12 5v14M5 12h14"
+            /></svg>Neue Vorlage</a>
+        </div>
+        <div class="panel-meta"><span><span class="mono" data-template-count>0</span> von <span class="mono">20</span> Vorlagen</span></div>
+        <div class="panel-stack">
+          
+          <div class="empty-state" data-od-id="empty-state">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" aria-hidden="true"
+            ><rect x="6" y="9" width="44" height="30" rx="6" fill="#e8eefc" stroke="#1c58d9" stroke-width="2"
+            /><path d="M16 39v8l10-8" fill="#e8eefc" stroke="#1c58d9" stroke-width="2" stroke-linejoin="round"
+            /><path d="M16 20h24M16 28h14" stroke="#1c58d9" stroke-width="2" stroke-linecap="round"
+          /></svg>
+          <h3>Noch keine Antwortvorlagen</h3>
+          <p>Mit „Neue Vorlage“ legst du deine erste an. Danach findest du sie im Nachrichtenfeld über den Vorlagen-Button.</p>
+        </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</body>
+</html>

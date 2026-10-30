@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Übersicht – mattermost2</title>
+<meta name="screen-route" content="/">
+<link rel="stylesheet" href="styles.css">
+<script src="mockup.js" defer></script>
+</head>
+<body>
+<!-- serves: AC-01 – AC-18 (overview of all screens) -->
+<main class="overview" data-od-id="overview">
+  <h1 class="overview__title">Antwortvorlagen</h1>
+  <p class="overview__lead">Klickbarer Entwurf für mattermost2: persönliche Antwortvorlagen verwalten und im Nachrichtenfeld einfügen. Die Bildschirme sind Zustände von einer Seite, dem Kanal.</p>
+  <section class="overview__group" data-od-id="group-1">
+    <h2>Nachrichten-Eingabefeld</h2>
+    <p>Der Vorlagen-Button in der Formatierungsleiste und sein Menü.</p>
+    <ul class="screen-grid">
+      <li
+        ><a class="screen-card" href="channel-view.html" data-od-id="screen-channel-view"
+          ><h3>Kanal</h3
+          ><p>Seite wie sie sich öffnet, mit Vorlagen-Button im Eingabefeld.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-06</span
+          ></span
+        ></a
+      ></li>
+      <li
+        ><a class="screen-card" href="channel-view-templates-menu.html" data-od-id="screen-channel-view-templates-menu"
+          ><h3>Menü geöffnet</h3
+          ><p>Neun Vorlagen mit Suchfeld; die Suche filtert live.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-06 · AC-07</span
+          ></span
+        ></a
+      ></li>
+      <li
+        ><a class="screen-card" href="channel-view-templates-menu-few.html" data-od-id="screen-channel-view-templates-menu-few"
+          ><h3>Menü ohne Suchfeld</h3
+          ><p>Bis zu fünf Vorlagen: nur die Liste.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-07</span
+          ></span
+        ></a
+      ></li>
+      <li
+        ><a class="screen-card" href="channel-view-templates-menu-no-results.html" data-od-id="screen-channel-view-templates-menu-no-results"
+          ><h3>Suche ohne Treffer</h3
+          ><p>Zeile „Keine Vorlagen gefunden.“</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-07</span
+          ></span
+        ></a
+      ></li>
+      <li
+        ><a class="screen-card" href="channel-view-templates-menu-empty.html" data-od-id="screen-channel-view-templates-menu-empty"
+          ><h3>Menü ohne Vorlagen</h3
+          ><p>Hinweis mit Link in die Einstellungen.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-08</span
+          ></span
+        ></a
+      ></li>
+      <li
+        ><a class="screen-card" href="channel-view-template-inserted.html" data-od-id="screen-channel-view-template-inserted"
+          ><h3>Vorlage eingefügt</h3
+          ><p>Text an der Cursorposition, Fokus im Textfeld.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-06</span
+          ></span
+        ></a
+      ></li>
+      <li
+        ><a class="screen-card" href="channel-view-template-too-long.html" data-od-id="screen-channel-view-template-too-long"
+          ><h3>Einfügen abgelehnt</h3
+          ><p>Sichtbare Meldung, Eingabetext unverändert.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-15</span
+          ></span
+        ></a
+      ></li>
+    </ul>
+  </section>
+  <section class="overview__group" data-od-id="group-2">
+    <h2>Einstellungen · Antwortvorlagen</h2>
+    <p>Neuer Bereich im Einstellungs-Dialog.</p>
+    <ul class="screen-grid">
+      <li
+        ><a class="screen-card" href="settings-reply-templates.html" data-od-id="screen-settings-reply-templates"
+          ><h3>Bereich geöffnet</h3
+          ><p>Liste der Vorlagen mit Bearbeiten und Löschen.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-01 · AC-03</span
+          ></span
+        ></a
+      ></li>
+      <li
+        ><a class="screen-card" href="settings-reply-templates-create.html" data-od-id="screen-settings-reply-templates-create"
+          ><h3>Neue Vorlage</h3
+          ><p>Formular im neutralen Ausgangszustand.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-02</span
+          ></span
+        ></a
+      ></li>
+      <li
+        ><a class="screen-card" href="settings-reply-templates-create-errors.html" data-od-id="screen-settings-reply-templates-create-errors"
+          ><h3>Formular mit Fehlern</h3
+          ><p>Titel zu lang, Text leer.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-04</span
+          ></span
+        ></a
+      ></li>
+      <li
+        ><a class="screen-card" href="settings-reply-templates-edit.html" data-od-id="screen-settings-reply-templates-edit"
+          ><h3>Vorlage bearbeiten</h3
+          ><p>Eintrag als Formular in der Liste.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-03</span
+          ></span
+        ></a
+      ></li>
+      <li
+        ><a class="screen-card" href="settings-reply-templates-limit.html" data-od-id="screen-settings-reply-templates-limit"
+          ><h3>Limit erreicht</h3
+          ><p>20 von 20 Vorlagen, neue Vorlage abgelehnt.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-04</span
+          ></span
+        ></a
+      ></li>
+      <li
+        ><a class="screen-card" href="settings-reply-templates-empty.html" data-od-id="screen-settings-reply-templates-empty"
+          ><h3>Keine Vorlagen</h3
+          ><p>Leerzustand des Bereichs.</p
+          ><span class="screen-card__tags"
+            ><span class="badge">AC-02 · AC-08</span
+          ></span
+        ></a
+      ></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
