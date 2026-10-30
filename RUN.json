@@ -1,0 +1,65 @@
+{
+    "runcontract": 1,
+    "services": [
+        {
+            "name": "webapp",
+            "dir": "webapp",
+            "stack": "web-webpack",
+            "kind": "static",
+            "install": [
+                ["npm", "ci", "--include=dev"]
+            ],
+            "build": [
+                ["npm", "run", "build"]
+            ],
+            "serve_dir": "channels/dist",
+            "test": [
+                ["npm", "test", "--workspace=channels"]
+            ],
+            "env": {
+                "NODE_ENV": {"dev": "development"}
+            }
+        },
+        {
+            "name": "db",
+            "kind": "database",
+            "engine": "postgres"
+        },
+        {
+            "name": "server",
+            "dir": "server",
+            "stack": "go",
+            "kind": "server",
+            "install": [
+                ["make", "setup-go-work"]
+            ],
+            "build": [
+                ["go", "build", "-o", "bin/mattermost", "./cmd/mattermost"]
+            ],
+            "start": ["./bin/mattermost"],
+            "port": 8065,
+            "health": {"path": "/api/v4/system/ping", "expect_status": [200]},
+            "ready_timeout_s": 120,
+            "test": [
+                ["go", "test", "./..."]
+            ],
+            "env": {
+                "MM_SQLSETTINGS_DRIVERNAME": {"dev": "postgres"},
+                "MM_SQLSETTINGS_DATASOURCE": {"dev": "${service:db.url}"},
+                "TEST_DATABASE_POSTGRESQL_DSN": {"dev": "${service:db.url}"},
+                "PGSSLMODE": {"dev": "disable"},
+                "MM_SERVICESETTINGS_LISTENADDRESS": {"dev": ":8065"},
+                "MM_SERVICESETTINGS_SITEURL": {"dev": "http://localhost:8065"}
+            }
+        },
+        {
+            "name": "api",
+            "dir": "api",
+            "stack": "node",
+            "kind": "library",
+            "install": [
+                ["npm", "ci"]
+            ]
+        }
+    ]
+}
