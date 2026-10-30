@@ -31,7 +31,7 @@
             "stack": "go",
             "kind": "server",
             "install": [
-                ["make", "setup-go-work"]
+                ["go", "mod", "download"]
             ],
             "build": [
                 ["go", "build", "-o", "bin/mattermost", "./cmd/mattermost"]
