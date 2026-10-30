@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reply templates - screen overview</title>
+<meta name="screen-route" content="/">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- serves: AC-01, AC-02, AC-03, AC-04, AC-05, AC-06, AC-07, AC-08, AC-09, AC-10, AC-13, AC-15, AC-16, AC-18, AC-19 -->
+<main class="overview" data-od-id="overview">
+  <header>
+    <p class="eyebrow">Channels web app</p>
+    <h1 data-od-id="overview-title">Personal reply templates</h1>
+    <p class="overview-lead">Users keep their own reply templates in Settings and insert them from a menu next to the message input. Start at the channel, or open the settings section.</p>
+  </header>
+  <section class="overview-group" aria-labelledby="group-input" data-od-id="group-input">
+    <h2 id="group-input">Message input</h2>
+    <p>The channel view with the template button, and the states of its menu.</p>
+    <div class="link-grid">
+      <a class="link-card" href="channel-view.html" data-od-id="link-channel-view"
+        ><span class="mono">/:team/channels/:channel</span
+        ><strong>Channel view</strong
+        ><span>The page as it opens, with the template button in the message box.</span
+      ></a>
+      <a class="link-card" href="channel-template-menu.html" data-od-id="link-channel-template-menu"
+        ><span class="mono">menu open</span
+        ><strong>Menu with search</strong
+        ><span>More than 5 templates: a title search field sits above the list.</span
+      ></a>
+      <a class="link-card" href="channel-template-menu-filtered.html" data-od-id="link-channel-template-menu-filtered"
+        ><span class="mono">menu open</span
+        ><strong>Menu filtered</strong
+        ><span>The list narrowed by a case-insensitive title search.</span
+      ></a>
+      <a class="link-card" href="channel-template-menu-no-match.html" data-od-id="link-channel-template-menu-no-match"
+        ><span class="mono">menu open</span
+        ><strong>Menu without match</strong
+        ><span>A search that finds nothing shows a note.</span
+      ></a>
+      <a class="link-card" href="channel-template-menu-few.html" data-od-id="link-channel-template-menu-few"
+        ><span class="mono">menu open</span
+        ><strong>Menu with few templates</strong
+        ><span>Five or fewer templates: no search field.</span
+      ></a>
+      <a class="link-card" href="channel-template-menu-empty.html" data-od-id="link-channel-template-menu-empty"
+        ><span class="mono">menu open</span
+        ><strong>Menu without templates</strong
+        ><span>A hint and a link to the Reply templates settings.</span
+      ></a>
+      <a class="link-card" href="channel-template-inserted.html" data-od-id="link-channel-template-inserted"
+        ><span class="mono">draft</span
+        ><strong>Template inserted</strong
+        ><span>The text sits in the draft, the cursor behind it.</span
+      ></a>
+    </div>
+  </section>
+  <section class="overview-group" aria-labelledby="group-settings" data-od-id="group-settings">
+    <h2 id="group-settings">Settings: Reply templates</h2>
+    <p>The new section in the settings modal, where templates are created, edited and deleted.</p>
+    <div class="link-grid">
+      <a class="link-card" href="settings-templates-list.html" data-od-id="link-settings-templates-list"
+        ><span class="mono">settings modal</span
+        ><strong>Template list</strong
+        ><span>All templates with title and text preview.</span
+      ></a>
+      <a class="link-card" href="settings-templates-empty.html" data-od-id="link-settings-templates-empty"
+        ><span class="mono">settings modal</span
+        ><strong>No templates yet</strong
+        ><span>The empty section with the add action.</span
+      ></a>
+      <a class="link-card" href="settings-template-add.html" data-od-id="link-settings-template-add"
+        ><span class="mono">settings modal</span
+        ><strong>Add template</strong
+        ><span>A fresh form without any error message.</span
+      ></a>
+      <a class="link-card" href="settings-template-add-errors.html" data-od-id="link-settings-template-add-errors"
+        ><span class="mono">settings modal</span
+        ><strong>Validation errors</strong
+        ><span>Title too long and text missing.</span
+      ></a>
+      <a class="link-card" href="settings-template-edit.html" data-od-id="link-settings-template-edit"
+        ><span class="mono">settings modal</span
+        ><strong>Edit template</strong
+        ><span>Title and text of an existing template.</span
+      ></a>
+      <a class="link-card" href="settings-template-limit.html" data-od-id="link-settings-template-limit"
+        ><span class="mono">settings modal</span
+        ><strong>Limit reached</strong
+        ><span>20 templates: adding is disabled and explained.</span
+      ></a>
+      <a class="link-card" href="settings-template-save-error.html" data-od-id="link-settings-template-save-error"
+        ><span class="mono">settings modal</span
+        ><strong>Saving failed</strong
+        ><span>A generic error message, the form stays filled.</span
+      ></a>
+      <a class="link-card" href="settings-template-delete-error.html" data-od-id="link-settings-template-delete-error"
+        ><span class="mono">settings modal</span
+        ><strong>Deleting failed</strong
+        ><span>A generic error message, the list stays unchanged.</span
+      ></a>
+    </div>
+  </section>
+</main>
+<script src="mockup.js"></script>
+</body>
+</html>

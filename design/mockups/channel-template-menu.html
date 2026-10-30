@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>customer-support - Acme Care</title>
+<meta name="screen-route" content="/:team/channels/:channel">
+<meta name="screen-state" content="template menu open, more than 5 templates with search">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- serves: AC-07, AC-08, AC-13, AC-19 -->
+<div class="app">
+<!-- Channel switching is existing Channels behaviour; the links only keep the click-through working -->
+<nav class="sidebar" aria-label="Channels" data-od-id="channel-sidebar">
+  <div class="sidebar-team">Acme Care</div>
+  <h2 class="sidebar-heading">Channels</h2>
+  <ul
+    ><li
+      ><a class="sidebar-link" href="channel-view.html"
+        ><span class="sigil" aria-hidden="true">#</span>town-square</a
+    ></li
+    ><li
+      ><a class="sidebar-link" href="channel-view.html" aria-current="page"
+        ><span class="sigil" aria-hidden="true">#</span>customer-support</a
+    ></li
+    ><li
+      ><a class="sidebar-link" href="channel-view.html"
+        ><span class="sigil" aria-hidden="true">#</span>releases</a
+    ></li
+    ><li
+      ><a class="sidebar-link" href="channel-view.html"
+        ><span class="sigil" aria-hidden="true">#</span>engineering-help</a
+    ></li
+  ></ul>
+  <h2 class="sidebar-heading">Direct messages</h2>
+  <ul
+    ><li
+      ><a class="sidebar-link" href="channel-view.html"
+        ><span class="sigil" aria-hidden="true">@</span>Priya Nair</a
+    ></li
+    ><li
+      ><a class="sidebar-link" href="channel-view.html"
+        ><span class="sigil" aria-hidden="true">@</span>Tom Becker</a
+    ></li
+  ></ul>
+</nav>
+<main class="main" data-od-id="channel-main">
+  <header class="channel-header" data-od-id="channel-header">
+    <div>
+      <h1 data-od-id="channel-name"># customer-support</h1>
+      <p class="channel-topic">Open tickets and customer replies</p>
+    </div>
+    <a class="icon-btn" href="settings-templates-list.html" aria-label="Settings" title="Settings" data-od-id="settings-button"
+      ><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"
+        ><circle cx="10" cy="10" r="2.6"
+        /><path d="M10 2.5v2M10 15.5v2M2.5 10h2M15.5 10h2M4.7 4.7l1.4 1.4M13.9 13.9l1.4 1.4M4.7 15.3l1.4-1.4M13.9 6.1l1.4-1.4"
+      /></svg
+    ></a>
+  </header>
+  <div class="post-list" data-od-id="post-list">
+    <div class="date-divider">Today</div>
+    <article class="post" data-od-id="post-1">
+      <span class="avatar avatar-1" aria-hidden="true">PN</span>
+      <div class="post-body"
+        ><div class="post-meta"
+          ><span class="post-author">Priya Nair</span
+          ><span class="post-time">9:12 AM</span
+        ></div
+        ><p class="post-text">Morning all. Three new tickets overnight, two of them are sign-in problems after yesterday's release.</p
+      ></div>
+    </article>
+    <article class="post" data-od-id="post-2">
+      <span class="avatar avatar-2" aria-hidden="true">TB</span>
+      <div class="post-body"
+        ><div class="post-meta"
+          ><span class="post-author">Tom Becker</span
+          ><span class="post-time">9:18 AM</span
+        ></div
+        ><p class="post-text">Seeing the same here. Looks like cached sessions in Safari.</p
+      ></div>
+    </article>
+    <article class="post" data-od-id="post-3">
+      <span class="avatar avatar-4" aria-hidden="true">JK</span>
+      <div class="post-body"
+        ><div class="post-meta"
+          ><span class="post-author">Jonas Keller</span
+          ><span class="post-time">9:24 AM</span
+        ></div
+        ><p class="post-text">The customer from Northwind just replied: still cannot sign in, screenshot attached.</p
+      ></div>
+    </article>
+    <article class="post" data-od-id="post-4">
+      <span class="avatar avatar-1" aria-hidden="true">PN</span>
+      <div class="post-body"
+        ><div class="post-meta"
+          ><span class="post-author">Priya Nair</span
+          ><span class="post-time">9:27 AM</span
+        ></div
+        ><p class="post-text">I will take Northwind. @tom.becker can you check the session cookie settings?</p
+      ></div>
+    </article>
+    <article class="post" data-od-id="post-5">
+      <span class="avatar avatar-2" aria-hidden="true">TB</span>
+      <div class="post-body"
+        ><div class="post-meta"
+          ><span class="post-author">Tom Becker</span
+          ><span class="post-time">9:41 AM</span
+        ></div
+        ><p class="post-text">Found it, the cookie domain changed with the release. Patch goes out at 11:00.</p
+      ></div>
+    </article>
+    <article class="post" data-od-id="post-6">
+      <span class="avatar avatar-4" aria-hidden="true">JK</span>
+      <div class="post-body"
+        ><div class="post-meta"
+          ><span class="post-author">Jonas Keller</span
+          ><span class="post-time">9:43 AM</span
+        ></div
+        ><p class="post-text">Perfect. I will tell the customer to expect an update before noon.</p
+      ></div>
+    </article>
+  </div>
+  <div class="composer-wrap" data-od-id="composer">
+    <div class="menu" id="template-menu" role="menu" aria-label="Reply templates" data-od-id="template-menu">
+      <div class="menu-head">Reply templates</div>
+      <div class="menu-search" data-od-id="template-menu-search">
+        <label class="sr-only" for="template-search">Search templates by title</label>
+        <input class="input" id="template-search" type="search" placeholder="Search by title" autocomplete="off" value="" data-menu-search>
+      </div>
+      <ul class="menu-list" role="none">
+          <li role="none"
+            ><button class="menu-item" type="button" role="menuitem" data-text="Hello, thanks for getting in touch. We have received your request and will come back to you within one business day." data-od-id="template-menu-item-1"
+              ><span class="menu-item-title">Ticket received</span
+              ><span class="menu-item-preview">Hello, thanks for getting in touch. We have received your request and will come back to you within one business day.</span
+            ></button
+          ></li>
+          <li role="none"
+            ><button class="menu-item" type="button" role="menuitem" data-text="Thanks for reporting this. Could you tell us which browser and version you are using and send a screenshot of the error message?" data-od-id="template-menu-item-2"
+              ><span class="menu-item-title">Need more details</span
+              ><span class="menu-item-preview">Thanks for reporting this. Could you tell us which browser and version you are using and send a screenshot of the error message?</span
+            ></button
+          ></li>
+          <li role="none"
+            ><button class="menu-item" type="button" role="menuitem" data-text="Good news: the fix is now live. Please reload the page and let us know if the problem is gone for you." data-od-id="template-menu-item-3"
+              ><span class="menu-item-title">Fix is live</span
+              ><span class="menu-item-preview">Good news: the fix is now live. Please reload the page and let us know if the problem is gone for you.</span
+            ></button
+          ></li>
+          <li role="none"
+            ><button class="menu-item" type="button" role="menuitem" data-text="I have passed this on to our engineering team. They will investigate and I will update you here as soon as there is news." data-od-id="template-menu-item-4"
+              ><span class="menu-item-title">Escalated to engineering</span
+              ><span class="menu-item-preview">I have passed this on to our engineering team. They will investigate and I will update you here as soon as there is news.</span
+            ></button
+          ></li>
+          <li role="none"
+            ><button class="menu-item" type="button" role="menuitem" data-text="I am out of the office until Monday and will reply to messages when I am back. For urgent matters please ping @priya.nair." data-od-id="template-menu-item-5"
+              ><span class="menu-item-title">Out of office</span
+              ><span class="menu-item-preview">I am out of the office until Monday and will reply to messages when I am back. For urgent matters please ping @priya.nair.</span
+            ></button
+          ></li>
+          <li role="none"
+            ><button class="menu-item" type="button" role="menuitem" data-text="Sorry, I need to move our meeting. Would tomorrow at 10:00 or Thursday at 14:00 work for you?" data-od-id="template-menu-item-6"
+              ><span class="menu-item-title">Reschedule meeting</span
+              ><span class="menu-item-preview">Sorry, I need to move our meeting. Would tomorrow at 10:00 or Thursday at 14:00 work for you?</span
+            ></button
+          ></li>
+          <li role="none"
+            ><button class="menu-item" type="button" role="menuitem" data-text="Weekly status:&#10;- Done: &#10;- In progress: &#10;- Blocked: " data-od-id="template-menu-item-7"
+              ><span class="menu-item-title">Weekly status update</span
+              ><span class="menu-item-preview">Weekly status:
+    - Done: 
+    - In progress: 
+    - Blocked: </span></button></li>
+          <li role="none"
+            ><button class="menu-item" type="button" role="menuitem" data-text="Thanks everyone. I am marking this as resolved. Feel free to reopen it if anything comes up." data-od-id="template-menu-item-8"
+              ><span class="menu-item-title">Closing this thread</span
+              ><span class="menu-item-preview">Thanks everyone. I am marking this as resolved. Feel free to reopen it if anything comes up.</span
+            ></button
+          ></li>
+      </ul>
+      <p class="menu-note" role="status" data-no-match data-od-id="template-menu-no-match" hidden>No matching templates</p>
+    </div>
+    <form class="composer" data-composer>
+      <label class="sr-only" for="message-input">Message</label>
+      <textarea class="composer-input" id="message-input" rows="2" placeholder="Write to customer-support" data-od-id="message-input"></textarea>
+      <div class="composer-bar">
+        <div class="composer-tools">
+          <button class="icon-btn" type="button" aria-haspopup="menu" aria-expanded="true" aria-controls="template-menu" aria-label="Reply templates" title="Reply templates" data-menu-toggle data-od-id="reply-templates-button"
+            ><svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"
+              ><path d="M5 3h7l4 4v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"
+              /><path d="M12 3v4h4M7 11h6M7 14h4"
+            /></svg
+          ></button>
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit" data-send data-od-id="send-button" disabled>Send</button>
+      </div>
+    </form>
+  </div>
+</main>
+</div>
+<script src="mockup.js"></script>
+</body>
+</html>
