@@ -1,0 +1,83 @@
+{
+    "runcontract": 1,
+    "services": [
+        {
+            "name": "db",
+            "kind": "database",
+            "engine": "postgres"
+        },
+        {
+            "name": "api",
+            "dir": "server",
+            "stack": "go",
+            "kind": "server",
+            "install": [
+                ["go", "run", "./scripts/setup_go_work"],
+                ["go", "mod", "download"]
+            ],
+            "build": [
+                ["go", "build", "-o", "bin/mattermost", "./cmd/mattermost"]
+            ],
+            "start": ["./bin/mattermost"],
+            "test": [
+                ["go", "test", "./..."]
+            ],
+            "port": 8065,
+            "health": {
+                "path": "/api/v4/system/ping",
+                "expect_status": [200]
+            },
+            "ready_timeout_s": 120,
+            "env": {
+                "MM_SQLSETTINGS_DRIVERNAME": {"dev": "postgres"},
+                "MM_SQLSETTINGS_DATASOURCE": {"dev": "${service:db.url}"},
+                "TEST_DATABASE_POSTGRESQL_DSN": {"dev": "${service:db.url}"},
+                "PGSSLMODE": {"dev": "prefer"},
+                "MM_SERVICESETTINGS_LISTENADDRESS": {"dev": ":8065"}
+            }
+        },
+        {
+            "name": "server-public",
+            "dir": "server/public",
+            "stack": "go",
+            "kind": "library",
+            "install": [
+                ["go", "mod", "download"]
+            ],
+            "build": [
+                ["go", "build", "./..."]
+            ],
+            "test": [
+                ["go", "test", "./..."]
+            ]
+        },
+        {
+            "name": "api-reference",
+            "dir": "api",
+            "stack": "node",
+            "kind": "library",
+            "install": [
+                ["npm", "ci", "--no-audit", "--no-fund"]
+            ]
+        },
+        {
+            "name": "webapp",
+            "dir": "webapp",
+            "stack": "web-webpack",
+            "kind": "static",
+            "install": [
+                ["npm", "ci", "--no-audit", "--no-fund"]
+            ],
+            "build": [
+                ["npm", "run", "build"]
+            ],
+            "serve_dir": "channels/dist",
+            "test": [
+                ["npm", "test"]
+            ],
+            "env": {
+                "NODE_ENV": {"dev": "development"}
+            }
+        }
+    ]
+}
